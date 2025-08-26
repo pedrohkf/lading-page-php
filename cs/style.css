@@ -1,0 +1,373 @@
+.cs {
+    background-color: #121111;
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    width: 100vw;
+  }
+  
+  .cs .div {
+    background-color: #121111;
+    overflow: hidden;
+    width: 1920px;
+    height: 5435px;
+    position: relative;
+  }
+  
+  .cs .maps {
+    position: absolute;
+    width: 1510px;
+    height: 736px;
+    top: 1367px;
+    left: 206px;
+  }
+  
+  .cs .group {
+    position: absolute;
+    width: 347px;
+    height: 280px;
+    top: 456px;
+    left: 1161px;
+    background-image: url(./img/mask-group-6.png);
+    background-size: 100% 100%;
+  }
+  
+  .cs .group-2 {
+    position: absolute;
+    width: 347px;
+    height: 280px;
+    top: 456px;
+    left: 774px;
+    background-image: url(./img/mask-group-3.png);
+    background-size: 100% 100%;
+  }
+  
+  .cs .group-3 {
+    position: absolute;
+    width: 347px;
+    height: 280px;
+    top: 456px;
+    left: 387px;
+    background-image: url(./img/mask-group-7.png);
+    background-size: 100% 100%;
+  }
+  
+  .cs .group-4 {
+    position: absolute;
+    width: 347px;
+    height: 280px;
+    top: 456px;
+    left: 0;
+    background-image: url(./img/mask-group.png);
+    background-size: 100% 100%;
+  }
+  
+  .cs .group-5 {
+    position: absolute;
+    width: 347px;
+    height: 280px;
+    top: 144px;
+    left: 1161px;
+    background-image: url(./img/mask-group-4.png);
+    background-size: 100% 100%;
+  }
+  
+  .cs .group-6 {
+    position: absolute;
+    width: 347px;
+    height: 280px;
+    top: 144px;
+    left: 774px;
+    background-image: url(./img/mask-group-5.png);
+    background-size: 100% 100%;
+  }
+  
+  .cs .group-7 {
+    position: absolute;
+    width: 347px;
+    height: 280px;
+    top: 144px;
+    left: 387px;
+    background-image: url(./img/mask-group-2.png);
+    background-size: 100% 100%;
+  }
+  
+  .cs .group-8 {
+    position: absolute;
+    width: 347px;
+    height: 280px;
+    top: 144px;
+    left: 0;
+    background-image: url(./img/image.png);
+    background-size: 100% 100%;
+  }
+  
+  .cs .text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 689px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 45px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .cs .div-2 {
+    position: absolute;
+    width: 1922px;
+    height: 1102px;
+    top: 0;
+    left: 0;
+  }
+  
+  .cs .overlap {
+    position: relative;
+    width: 1920px;
+    height: 1102px;
+  }
+  
+  .cs .element {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    top: 0;
+    left: 0;
+    aspect-ratio: 1.78;
+    object-fit: cover;
+  }
+  
+  .cs .rectangle {
+    height: 1080px;
+    top: 0;
+    background-color: #00000075;
+    position: absolute;
+    width: 1920px;
+    left: 0;
+  }
+  
+  .cs .rectangle-2 {
+    height: 562px;
+    top: 540px;
+    background: linear-gradient(
+      0deg,
+      rgba(18, 17, 17, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    position: absolute;
+    width: 1920px;
+    left: 0;
+  }
+  
+  .cs .text-wrapper-2 {
+    position: absolute;
+    top: 465px;
+    left: 857px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #e0e0e0;
+    font-size: 100px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .cs .button {
+    all: unset;
+    box-sizing: border-box;
+    position: absolute;
+    width: 233px;
+    height: 53px;
+    top: 712px;
+    left: 845px;
+  }
+  
+  .cs .overlap-group {
+    position: relative;
+    width: 231px;
+    height: 53px;
+    background-color: #450ad0;
+    border-radius: 50px;
+  }
+  
+  .cs .text-wrapper-3 {
+    position: absolute;
+    top: 13px;
+    left: 64px;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #dfdfdf;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .cs .menu {
+    position: absolute;
+    width: 1920px;
+    height: 122px;
+    top: 0;
+    left: 0;
+  }
+  
+  .cs .group-9 {
+    position: relative;
+    width: 314px;
+    height: 30px;
+    top: 46px;
+    left: 827px;
+  }
+  
+  .cs .text-wrapper-4 {
+    position: absolute;
+    top: 0;
+    left: 139px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .cs .text-wrapper-5 {
+    position: absolute;
+    top: 0;
+    left: 224px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .cs .valorant {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .cs .captura-de-tela {
+    position: absolute;
+    width: 1429px;
+    height: 215px;
+    top: 2480px;
+    left: 246px;
+    aspect-ratio: 6.65;
+  }
+  
+  .cs .text-wrapper-6 {
+    position: absolute;
+    top: 2352px;
+    left: 853px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 50px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .cs .overlap-wrapper {
+    all: unset;
+    box-sizing: border-box;
+    position: absolute;
+    width: 263px;
+    height: 74px;
+    top: 2855px;
+    left: 830px;
+  }
+  
+  .cs .div-wrapper {
+    position: relative;
+    width: 261px;
+    height: 74px;
+    background-color: #3850ec;
+    border-radius: 20px;
+  }
+  
+  .cs .text-wrapper-7 {
+    position: absolute;
+    top: 22px;
+    left: 66px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .cs .img {
+    position: absolute;
+    width: 1367px;
+    height: 576px;
+    top: 3179px;
+    left: 277px;
+    aspect-ratio: 2.37;
+    object-fit: cover;
+  }
+  
+  .cs .text-wrapper-8 {
+    position: absolute;
+    top: 3092px;
+    left: 779px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .cs .videos {
+    position: absolute;
+    width: 1100px;
+    height: 712px;
+    top: 4179px;
+    left: 410px;
+  }
+  
+  .cs .captura-de-tela-2 {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 500px;
+    height: 281px;
+    aspect-ratio: 1.78;
+  }
+  
+  .cs .captura-de-tela-3 {
+    top: 0;
+    left: 600px;
+    position: absolute;
+    width: 500px;
+    height: 281px;
+    aspect-ratio: 1.78;
+  }
+  
+  .cs .captura-de-tela-4 {
+    top: 431px;
+    left: 0;
+    position: absolute;
+    width: 500px;
+    height: 281px;
+    aspect-ratio: 1.78;
+  }
+  
+  .cs .captura-de-tela-5 {
+    top: 431px;
+    left: 600px;
+    position: absolute;
+    width: 500px;
+    height: 281px;
+    aspect-ratio: 1.78;
+  }
+  

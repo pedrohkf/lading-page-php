@@ -1,0 +1,32 @@
+/* Reset e global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #121111;
+  color: #fff;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Botões genéricos */
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Imagens globais */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

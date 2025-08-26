@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS:GO Landing Page</title>
+  <!-- Inclui a biblioteca AOS para animações de entrada -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Inclui o CDN do Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Adiciona a fonte Poppins do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Adiciona a fonte Inter para o resto do conteúdo -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Estilos customizados para a roleta e a página -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hero-background {
+      background-image: url('img/1333091\ 1.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Estilo para a roleta */
+    .roulette-container {
+      width: 100%;
+      overflow-x: hidden;
+      border-radius: 12px;
+    }
+
+    .roulette {
+      display: flex;
+      transition: transform 10s cubic-bezier(0.165, 0.84, 0.44, 1);
+      /* Animação suave de parada */
+    }
+
+    .roulette-item {
+      min-width: 150px;
+      /* Largura mínima do item para visibilidade */
+      height: 100px;
+      background-color: #333;
+      border: 2px solid #555;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      text-align: center;
+      border-radius: 8px;
+      flex-shrink: 0;
+      margin: 0 4px;
+    }
+
+    .roulette-item img {
+      max-height: 60px;
+      object-fit: contain;
+    }
+
+    /* Estilo para a linha indicadora de parada */
+    .indicator {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: #ff4655;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    /* Estilos para o modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #2a2a2a;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#1a1a1a] text-white overflow-x-hidden">
+
+  <!-- Header Fixo -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a] bg-opacity-80 backdrop-blur-sm shadow-md py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <!-- Logo/Título -->
+      <h1 class="text-xl font-bold text-white uppercase tracking-wider">CS:GO</h1>
+      <!-- Menu de Navegação -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6 text-sm font-semibold uppercase">
+          <li><a href="#hero" class="hover:text-[#ff4655] transition-colors duration-300">Home</a></li>
+          <li><a href="#maps" class="hover:text-[#ff4655] transition-colors duration-300">Mapas</a></li>
+          <li><a href="#roulette" class="hover:text-[#ff4655] transition-colors duration-300">Sorteio</a></li>
+          <li><a href="#contact" class="hover:text-[#ff4655] transition-colors duration-300">Contato</a></li>
+        </ul>
+      </nav>
+      <!-- Botão de menu mobile (não implementado, mas o layout suporta) -->
+      <button class="md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Seção Hero -->
+  <section id="hero"
+    class="relative hero-background h-screen flex flex-col justify-center items-center text-center p-4">
+    <!-- Overlay escuro para melhorar a legibilidade -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10" data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white drop-shadow-lg">
+        <span class="text-[#ff4655]">Counter-Strike 2</span>
+      </h2>
+      <p class="mt-4 text-lg sm:text-xl md:text-2xl font-light text-white drop-shadow-md">
+        O próximo capítulo da história do CS.
+      </p>
+      <button
+        class="mt-8 px-8 py-3 bg-[#ff4655] text-white font-bold rounded-full shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-[#ff4655] focus:outline-none focus:ring-4 focus:ring-[#ff4655] focus:ring-opacity-50">
+        SAIBA MAIS
+      </button>
+    </div>
+  </section>
+
+  <!-- Seção de Mapas -->
+  <section id="maps" class="py-20 md:py-24 bg-[#1a1a1a]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-12" data-aos="fade-up">MAPAS</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Card de Mapa - TRAIN -->
+        <div
+          class="rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          data-aos="fade-up" data-aos-delay="0">
+          <img src="img/maps (1).png" alt="Mapa Train" class="w-full h-full object-cover">
+        </div>
+        <!-- Card de Mapa - DUST -->
+        <div
+          class="rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          data-aos="fade-up" data-aos-delay="100">
+          <img src="img/maps (2).png" alt="Mapa Dust" class="w-full h-full object-cover">
+        </div>
+        <!-- Card de Mapa - INFERNO -->
+        <div
+          class="rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          data-aos="fade-up" data-aos-delay="200">
+          <img src="img/maps (3).png" alt="Mapa Inferno" class="w-full h-full object-cover">
+        </div>
+        <!-- Card de Mapa - MIRAGE -->
+        <div
+          class="rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          data-aos="fade-up" data-aos-delay="300">
+          <img src="img/maps (4).png" alt="Mapa Mirage" class="w-full h-full object-cover">
+        </div>
+        <div
+          class="rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          data-aos="fade-up" data-aos-delay="300">
+          <img src="img/maps (5).png" alt="Mapa Mirage" class="w-full h-full object-cover">
+        </div>
+
+        <div
+          class="rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          data-aos="fade-up" data-aos-delay="300">
+          <img src="img/maps (6).png" alt="Mapa Mirage" class="w-full h-full object-cover">
+        </div>
+
+        <div
+          class="rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          data-aos="fade-up" data-aos-delay="300">
+          <img src="img/maps (7).png" alt="Mapa Mirage" class="w-full h-full object-cover">
+        </div>
+
+        <div
+          class="rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          data-aos="fade-up" data-aos-delay="300">
+          <img src="img/maps (8).png" alt="Mapa Mirage" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção da Roleta de Skins de CS:GO -->
+  <section id="roulette" class="py-16 md:py-24 bg-[#212121]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8" data-aos="fade-up">SORTEIO DE SKINS</h2>
+      <p class="text-lg text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="100">
+        Clique no botão para tentar a sorte e ganhar uma skin rara!
+      </p>
+
+      <!-- Contêiner da roleta -->
+      <div class="roulette-container relative mx-auto max-w-4xl" data-aos="fade-up" data-aos-delay="200">
+        <div class="indicator"></div>
+        <div class="roulette" id="roulette">
+          <!-- Itens da roleta serão gerados via JavaScript -->
+        </div>
+      </div>
+
+      <!-- Botão de girar a roleta -->
+      <button id="spinButton"
+        class="mt-8 px-8 py-3 bg-[#ff4655] text-white font-bold rounded-full shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-[#ff4655] focus:outline-none focus:ring-4 focus:ring-[#ff4655] focus:ring-opacity-50">
+        ABRIR A CAIXA
+      </button>
+    </div>
+  </section>
+
+  <!-- Modal de Resultado da Roleta -->
+  <div id="resultModal" class="modal">
+    <div class="modal-content">
+      <h3 class="text-2xl font-bold mb-4">Parabéns! Você Ganhou:</h3>
+      <img id="modalSkinImage" src="" alt="Skin de CS:GO" class="w-48 h-auto mx-auto mb-4">
+      <p id="modalSkinName" class="text-xl font-semibold text-[#ff4655]"></p>
+      <p class="text-sm text-gray-500 mt-2">Prêmio de Sorteio!</p>
+      <button onclick="closeModal()"
+        class="mt-4 px-6 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700 transition-colors">
+        Fechar
+      </button>
+    </div>
+  </div>
+
+  <!-- Seção CTA com Formulário -->
+  <section id="contact" class="py-16 md:py-24 bg-[#ff4655] text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-aos="fade-up">FIQUE POR DENTRO</h2>
+      <p class="text-lg md:text-xl text-white mb-8" data-aos="fade-up" data-aos-delay="100">
+        Assine nossa newsletter para receber as últimas notícias e atualizações.
+      </p>
+      <!-- Formulário que envia os dados para process.php -->
+      <form id="contactForm" class="flex flex-col md:flex-row justify-center items-center gap-4 max-w-lg mx-auto"
+        data-aos="fade-up" data-aos-delay="200">
+        <input type="email" name="email" id="emailInput" placeholder="Digite seu e-mail"
+          class="w-full md:w-2/3 px-6 py-3 rounded-full text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-800 transition-all duration-300"
+          required>
+        <button type="submit"
+          class="w-full md:w-1/3 px-6 py-3 bg-gray-800 text-white font-bold rounded-full shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-black focus:outline-none focus:ring-4 focus:ring-gray-800 focus:ring-opacity-50">
+          ASSINAR
+        </button>
+      </form>
+      <div id="formMessage" class="mt-4 text-center text-white font-semibold"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#1a1a1a] py-8 text-center text-gray-400 text-sm">
+    <div class="container mx-auto px-4">
+      <p>&copy; 2024 CS:GO. Todos os direitos reservados.</p>
+      <div class="mt-4 flex justify-center space-x-4">
+        <a href="#" class="hover:text-white transition-colors duration-300">Facebook</a>
+        <a href="#" class="hover:text-white transition-colors duration-300">Twitter</a>
+        <a href="#" class="hover:text-white transition-colors duration-300">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script de Inicialização do AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Dados das skins para a roleta (agora com apenas 6 opções)
+    const skins = [
+      { name: "AWP | Asiimov", img: "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_jdk7uW-V6V-Kf2cGFidxOp_pewnF3nhxEt0sGnSzN76dH3GOg9xC8FyEORftRe-x9PuYurq71bW3d8UnjK-0H0YSTpMGQ/360fx360f" },
+      { name: "AK-47 | Case Hardened", img: "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_aq_oiled_light_large.92c8d125e4e54758d37e946496030e9a18833b58.png" },
+      { name: "Karambit | Doppler", img: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20k_jkI7fUhFRB4MRij7r--YXygED68kNqZmCmJIPBdgY3aVHYqVi9wezsgcO_vc7KnCM1syNz5n7UzhOzhQYMMLL0qnyQMA" },
+      { name: "M4A4 | Asiimov", img: "https://community.fastly.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL8ypexwiFO0P_6V6V-Kf2cGFidxOp_pewnTii3w0x_tmTRnt2qdHyWaFAjA5UlQOYI5BO5k9bhZunm41OI34NDnjK-0H3pAWw_Rw/360fx360f" },
+      { name: "Desert Eagle | Blaze", img: "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyL1m5fn8Sdk7vORbqhsLfWAMWuZxuZi_uI_TX6wxxkjsGXXnImsJ37COlUoWcByEOMOtxa5kdXmNu3htVPZjN1bjXKpkHLRfQU/360fx360f" },
+      { name: "AWP | Dragon Lore", img: "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIGz3UqlXOLrxM-vMGmW8VNxu5Dx60noTyLwiYbf_jdk4veqYaF7IfysCnWRxuF4j-B-Xxa_nBovp3Pdwtj9cC_GaAd0DZdwQu9fuhS4kNy0NePntVTbjYpCyyT_3CgY5i9j_a9cBkcCWUKV/360fx360f" },
+    ];
+
+    // Função para gerar a roleta com um número fixo de itens para um visual mais limpo
+    function generateRoulette() {
+      const rouletteEl = document.getElementById('roulette');
+      // Crie um array menor (por exemplo, 30 itens) para um carretel mais simples
+      const longSpinList = Array(6).fill().map(() => skins[Math.floor(Math.random() * skins.length)]);
+      longSpinList.forEach(skin => {
+        const item = document.createElement('div');
+        item.className = 'roulette-item';
+        item.innerHTML = `<img src="${skin.img}" alt="${skin.name}" onerror="this.onerror=null; this.src='https://placehold.co/100x60/2a2a2a/ffffff?text=SKIN'">`;
+        const name = document.createElement('p');
+        name.className = 'text-xs text-gray-300 mt-2 truncate w-full px-1';
+        name.textContent = skin.name;
+        item.appendChild(name);
+        rouletteEl.appendChild(item);
+      });
+    }
+
+    // Função para girar a roleta
+    function spinRoulette() {
+      const rouletteEl = document.getElementById('roulette');
+      const spinButton = document.getElementById('spinButton');
+
+      // Desabilita o botão para evitar múltiplos giros
+      spinButton.disabled = true;
+      spinButton.textContent = 'GIRANDO...';
+
+      // Escolhe um item vencedor aleatoriamente da lista original de skins
+      const winningSkinIndex = Math.floor(Math.random() * skins.length);
+      const winningSkin = skins[winningSkinIndex];
+
+      // A roleta tem 30 itens. Gira para um ponto próximo do meio para o item vencedor.
+      const totalItems = rouletteEl.children.length;
+      const itemWidth = rouletteEl.children[0].offsetWidth + 8; // Largura do item + margem
+
+      // Posição para o item vencedor parar no centro da roleta
+      const winningItemOffset = (totalItems / 2) * itemWidth + winningSkinIndex * itemWidth;
+      const targetPosition = winningItemOffset - (rouletteEl.offsetWidth / 2) + (itemWidth / 2);
+
+      // Adiciona um valor aleatório final para o giro ser mais dinâmico
+      const randomOffset = Math.random() * (itemWidth * 2) - itemWidth;
+      const finalPosition = targetPosition + randomOffset;
+
+      // Aplica o estilo de transição para o giro
+      rouletteEl.style.transform = `translateX(-${finalPosition}px)`;
+
+      // Após a transição, mostra o modal com o resultado
+      rouletteEl.addEventListener('transitionend', () => {
+        showModal(winningSkin);
+        spinButton.disabled = false;
+        spinButton.textContent = 'ABRIR A CAIXA';
+      }, { once: true });
+
+      rouletteEl.addEventListener('transitionend', () => {
+        showModal(winningSkin);
+        rouletteEl.style.transition = 'none';
+        rouletteEl.style.transform = 'translateX(0)';
+        // força o browser a "recalcular"
+        void rouletteEl.offsetWidth;
+        rouletteEl.style.transition = 'transform 10s cubic-bezier(0.165, 0.84, 0.44, 1)';
+        spinButton.disabled = false;
+        spinButton.textContent = 'ABRIR A CAIXA';
+      }, { once: true });
+
+    }
+
+    // Função para mostrar o modal
+    function showModal(skin) {
+      const modal = document.getElementById('resultModal');
+      const modalSkinImage = document.getElementById('modalSkinImage');
+      const modalSkinName = document.getElementById('modalSkinName');
+
+      modalSkinImage.src = skin.img;
+      modalSkinName.textContent = skin.name;
+      modal.style.display = 'flex';
+    }
+
+    // Função para fechar o modal
+    function closeModal() {
+      const modal = document.getElementById('resultModal');
+      modal.style.display = 'none';
+    }
+
+    // Adiciona o evento de clique ao botão
+    document.getElementById('spinButton').addEventListener('click', spinRoulette);
+
+    // Gera a roleta no carregamento da página
+    window.onload = function () {
+      generateRoulette();
+    };
+
+    // Lida com o formulário de contato via AJAX
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Impede o envio padrão do formulário
+      const form = event.target;
+      const formData = new FormData(form);
+      const formMessage = document.getElementById('formMessage');
+
+      // Envia os dados para o script PHP
+      fetch('process.php', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.text())
+        .then(data => {
+          formMessage.textContent = data; // Exibe a mensagem de sucesso ou erro do PHP
+          form.reset(); // Limpa o formulário
+        })
+        .catch(error => {
+          console.error('Erro:', error);
+          formMessage.textContent = 'Ocorreu um erro ao enviar o formulário.';
+        });
+    });
+  </script>
+</body>
+
+</html>
